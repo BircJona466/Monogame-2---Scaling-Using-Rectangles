@@ -15,6 +15,8 @@ namespace Monogame_2___Scaling_Using_Rectangles
         Texture2D circTexture;
         Rectangle circRectangle;
 
+        SpriteFont textFont;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -41,6 +43,7 @@ namespace Monogame_2___Scaling_Using_Rectangles
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             rectTexture = Content.Load<Texture2D>("rectangle");
             circTexture = Content.Load<Texture2D>("circle");
+            textFont = Content.Load<SpriteFont>("TextFont");
 
             // TODO: use this.Content to load your game content here
         }
@@ -99,6 +102,10 @@ namespace Monogame_2___Scaling_Using_Rectangles
             _spriteBatch.Draw(circTexture, new Rectangle(110, 400, 30, 30), Color.DarkGoldenrod);
             _spriteBatch.Draw(rectTexture, new Rectangle(200, 600, 10, 100), Color.Black);
             _spriteBatch.Draw(rectTexture, new Rectangle(400, 600, 10, 100), Color.Black);
+
+
+
+            _spriteBatch.DrawString(textFont, "Spongebab", new Vector2(100, 100), Color.Black);
 
             _spriteBatch.End();
 
